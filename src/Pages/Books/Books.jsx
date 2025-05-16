@@ -16,7 +16,7 @@ const Books = () => {
   return (
     <div>
       <h1 className='text-3xl text-center p-5'>All Books</h1>
-     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
          {
         allBooks.length > 0 ? (
           allBooks.map((singleBook, index) => (
