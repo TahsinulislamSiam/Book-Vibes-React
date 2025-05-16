@@ -1,14 +1,17 @@
 import React from 'react';
 import { FaStarHalfStroke } from "react-icons/fa6";
+import { Link } from 'react-router';
 
 const Book = ({book}) => {
 
 
 
-const {bookName,author,image,rating,category,totalPages,yearOfPublishing}=book;
+const {bookName,author,image,bookId,rating,category,totalPages,yearOfPublishing,tags}=book;
 
     return (
-        <div>
+      <Link to={`/bookDetails/${bookId}`}>
+      
+          <div>
            <div className="card bg-base-100 w-96 shadow-sm border p-6">
   <figure className='p-3 bg-gray-200 w-2/3 mx-auto '>
     <img className='h-[166px]'
@@ -16,7 +19,13 @@ const {bookName,author,image,rating,category,totalPages,yearOfPublishing}=book;
       alt="Shoes" />
   </figure>
   <div className="card-body">
-    <h2 className="card-title">
+   <div className='flex gap-5 justify-center'>
+     {
+        tags.map(tag=><button>{tag}</button>)
+    }
+   </div>
+
+   <h2 className="card-title">
       {bookName}
       <div className="badge">{author}</div>
     </h2>
@@ -29,6 +38,8 @@ const {bookName,author,image,rating,category,totalPages,yearOfPublishing}=book;
   </div>
 </div>
         </div>
+      
+      </Link>
     );
 };
 
