@@ -29,7 +29,10 @@ export const router = createBrowserRouter([
 
         {
           path:'/bookDetails/:id',
-          loader:()=>('https://raw.githubusercontent.com/ProgrammingHero1/boi-poka-Book-Vibe-Resources/refs/heads/main/data/booksData.json'),
+          loader:async () => {
+    const res = await fetch('https://raw.githubusercontent.com/ProgrammingHero1/boi-poka-Book-Vibe-Resources/refs/heads/main/data/booksData.json');
+    return res.json();
+          },
           Component:BookDetails
 
         }
