@@ -3,9 +3,9 @@ import { Link } from 'react-router';
 
 const Navbar = () => {
     const links=<>
-      <Link className='hover:text-green-700' to='/'><li className='m-2'>Home</li></Link>
-      <Link className='hover:text-green-700'  to='/about'><li className='m-2'>About</li></Link>
-    
+      <Link className='hover:text-green-700 font-bold' to='/'><li className='m-2'>Home</li></Link>
+      <Link className='hover:text-green-700 font-bold'  to='/about'><li className='m-2'>About</li></Link>
+       <Link className='hover:text-green-700 font-bold'  to='/readList'><li className='m-2'>ReadList</li></Link>
     </>
 
     return (
@@ -33,8 +33,9 @@ const Navbar = () => {
 
     </ul>
   </div>
-  <div className="navbar-end">
-    <a className="btn">Button</a>
+  <div className="navbar-end gap-3">
+    <a className="btn bg-green-500 hover:bg-green-700">Sign in</a>
+    <a className="btn bg-green-500 hover:bg-green-700">LogIn</a>
   </div>
 </div>
     );
